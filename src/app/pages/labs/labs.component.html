@@ -1,6 +1,31 @@
-<h1>mi primer proyecto</h1>
-<ul>
-  <li Ngfor="let task of task">
-    {{ task }}  
-  </li>
-</ul>
+<div class="container">
+  <h1>mi primer proyecto</h1>
+ <!-- directiva de control -->
+  <ul>
+    <li *ngFor="let task of tasks">
+      {{ task }}  
+    </li>
+  </ul>
+  <hr/>
+  <!-- String interpolation -->
+  <h2> {{ 'Hola'.repeat(4) }} </h2>
+  <p> la suma es 3 + 3 {{ 3 + 3 }}</p>
+  <p>Hola soy {{ name() }} y mi edad es {{age}} </p>
+  <hr/>
+   <!-- Property Binding -->
+  <img [src]="person.avatar" alt="">
+  <input type="number" [value]="person.age">
+  <button [disabled]="disabled">Click me</button>
+  <p>person: {{ person.name }}</p>
+  <hr/>
+  <!-- Event Binding  -->
+  <button (click)="clickHandler()">Click me</button><br>
+  <button (dblclick)="clickHandler()">Click me</button>
+  <p>(event)</p>
+  <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  <hr/>
+  <!-- Signal -->
+  <p>(Signal)</p>
+  <input type="text" [value]="name()" (change)="changeHandler($event)">
+  <p>{{ name() }}</p>
+</div>
