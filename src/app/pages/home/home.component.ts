@@ -1,11 +1,11 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import {Task}  from '../../models/task.model'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

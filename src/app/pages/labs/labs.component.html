@@ -13,19 +13,28 @@
   <p>Hola soy {{ name() }} y mi edad es {{age}} </p>
   <hr/>
    <!-- Property Binding -->
-  <img [src]="person.avatar" alt="">
-  <input type="number" [value]="person.age">
+  <img [src]="person().avatar" alt="">
+  <input type="number" [value]="person().age">
   <button [disabled]="disabled">Click me</button>
-  <p>person: {{ person.name }}</p>
+  <p>person: {{ person().name }}</p>
   <hr/>
   <!-- Event Binding  -->
   <button (click)="clickHandler()">Click me</button><br>
   <button (dblclick)="clickHandler()">Click me</button>
   <p>(event)</p>
-  <input type="number" [value]="person.age" (change)="changeHandler($event)">
+  <input type="number" [value]="person().age" (change)="changeHandler($event)">
   <hr/>
   <!-- Signal -->
   <p>(Signal)</p>
   <input type="text" [value]="name()" (change)="changeHandler($event)">
   <p>{{ name() }}</p>
+  <hr/>
+  <ul>
+    <li *ngIf="person().name == 'Engell' && person().age > 30;else elseBlock">
+      render si 
+    </li>
+    <ng-template #elseBlock>
+       render no
+    </ng-template>
+  </ul>
 </div>

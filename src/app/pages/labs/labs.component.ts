@@ -1,10 +1,10 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,NgIf],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
@@ -21,11 +21,11 @@ export class LabsComponent {
   disabled = true;
   img='https:/w3schools.com/hwoto/img_avatar.png';
 
-  person={
+  person= signal({
     name:'Engell',
     age:28,
     avatar:'https:/w3schools.com/hwoto/img_avatar.png'
-  };
+  });
   
   clickHandler(){
     alert('hola');
