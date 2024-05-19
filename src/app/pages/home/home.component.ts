@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import {Task}  from '../../models/task.model'
+import {Task}  from '../../models/Task.model'
 
 @Component({
   selector: 'app-home',

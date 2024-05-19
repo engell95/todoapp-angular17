@@ -1,14 +1,24 @@
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [NgFor,NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault],
+  imports: [NgFor,NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault,ReactiveFormsModule],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
 export class LabsComponent {
+
+  constructor(){
+    this.colorCtrl.valueChanges.subscribe(value =>
+      {
+        console.log(value);
+      }
+    )
+  }
+
   title = 'todoapp';
   tasks =[
     'Instalar el angular CLI',
@@ -27,6 +37,8 @@ export class LabsComponent {
     avatar:'https:/w3schools.com/hwoto/img_avatar.png'
   });
   
+  colorCtrl = new FormControl();
+
   clickHandler(){
     alert('hola');
   }
