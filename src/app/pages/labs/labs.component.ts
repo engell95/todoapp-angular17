@@ -1,10 +1,10 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf,NgSwitch,NgSwitchCase,NgSwitchDefault],
   templateUrl: './labs.component.html',
   styleUrl: './labs.component.css'
 })
